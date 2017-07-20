@@ -30,7 +30,8 @@ var styles = StyleSheet.create({
   },
 
   transparent: {
-    zIndex: 2,
+    zIndex: 3,
+    elevation: 3,
     backgroundColor: 'rgba(0,0,0,0)'
   },
 
