@@ -117,13 +117,11 @@ var ModalBox = createReactClass({
   componentWillMount: function() {
     this.createPanResponder();
     this.handleOpenning(this.props);
-    // Needed for IOS because the keyboard covers the screen
-    if (Platform.OS === 'ios') {
-      this.subscriptions = [
-        Keyboard.addListener('keyboardWillChangeFrame', this.onKeyboardChange),
-        Keyboard.addListener('keyboardDidHide', this.onKeyboardHide)
-      ];
-    }
+    // Because the keyboard covers the screen
+    this.subscriptions = [
+      Keyboard.addListener('keyboardWillChangeFrame', this.onKeyboardChange),
+      Keyboard.addListener('keyboardDidHide', this.onKeyboardHide)
+    ];
   },
 
   componentWillUnmount: function() {
